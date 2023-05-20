@@ -16,6 +16,6 @@
         </style>
     </head>
     <body class="antialiased">
-        <h1>Hola Mundo en Laravel</h1>
+        <h1>Hola Mundo en Laravel desde casa</h1>
     </body>
 </html>
