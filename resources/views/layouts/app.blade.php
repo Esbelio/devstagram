@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        @stack('styles')
+        @vite('resources/js/app.js')
         <title>Devstagram - @yield('titulo')</title>
 
         @vite('resources/css/app.css')
@@ -28,7 +29,7 @@
                             Crear
                         </a>
 
-                        <a class="font-bold text-gray-600 text-sm"  href="#">
+                        <a class="font-bold text-gray-600 text-sm"  href="{{ route('post.index', auth()->user()->username )}}">
                             Hola: <span class="form-normal" >{{ auth()->user()->username }}</span>
                         </a>
                         <form method="POST" action="{{ route('logout') }}">
