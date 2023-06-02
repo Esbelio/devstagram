@@ -11,6 +11,8 @@ class ImagenController extends Controller
     {
         $imagene = $request->file('file');
 
+        $nombreImagen = Str::uuid() . "." .$imagen->extension();
+
         return response()->json(['imagen' => $imagene->extension()]);
     }
 }
