@@ -26,4 +26,10 @@ class PostController extends Controller
         //dd('hola');
        return view('post.create');
     }
+
+    public function store(Request $request)
+    {
+        //dd('Creando Publicacion');
+            
+    }
 }
