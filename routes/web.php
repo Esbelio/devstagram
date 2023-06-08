@@ -36,3 +36,4 @@ Route::post('/post', [PostController::class, 'store'])->name('post.store');
 
 Route::post('/imagenes', [ImagenController::class, 'store'])->name('imagenes.store'); 
 
+ 

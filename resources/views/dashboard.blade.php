@@ -3,7 +3,7 @@
 @section('titulo')
     Perfil: {{$user->username}}
 @endsection
-
+ 
 @section('contenido')
     <div class="flex justify-center">
         <div class="w-full md:w-8/12 lg:w-6/12 flex flex-col items-center md:flex-row">
@@ -28,4 +28,18 @@
             </div>
         </div>
     </div>
+
+    <section class="container mx-auto mt-10">
+        <h2 class="text-4xl text-center font-black my-10">Publicaciones</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            @foreach ($post as $p)
+                <div>
+                    <a>
+                        <img src="{{asset('uploads'). '/' . $p->imagen}}" alt="Imagen del post: {{$p->titulo}}">
+                    </a>
+                </div>
+            @endforeach
+        </div>
+    </section>
+
 @endsection
