@@ -68,7 +68,8 @@ class PostController extends Controller
     public function show(User $user, Post $post)
     {
         return view('post.show', [
-            'post' => $post
+            'post' => $post,
+            'user' => $user
         ]);
     }
 }
