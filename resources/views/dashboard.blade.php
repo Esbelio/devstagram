@@ -37,15 +37,15 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             @foreach ($post as $p)
                 <div>
-                    <a>
+                    <a href="{{route('post.show', ['post'=> $p, 'user'=> $user])}}">
                         <img src="{{asset('uploads'). '/' . $p->imagen}}" alt="Imagen del post: {{$p->titulo}}">
                     </a>
                 </div>
             @endforeach
         </div>
 
-        <div>
-            {{$post->links('pagination::bootstrap-4')}}
+        <div class="my-10">
+            {{$post->links()}}
         </div>
 
         @else
