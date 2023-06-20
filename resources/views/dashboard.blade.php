@@ -8,7 +8,9 @@
     <div class="flex justify-center">
         <div class="w-full md:w-8/12 lg:w-6/12 flex flex-col items-center md:flex-row">
             <div class="w-8/12 lg:w-6/12 px-5">
-                <img src="{{ asset('img/usuario.svg') }}" alt="Imagen de usuario">
+                <img src="{{ $user->imagen ? 
+                            asset('perfiles') . '/' . $user->imagen :
+                            asset('img/usuario.svg') }}" alt="Imagen de usuario">
             </div>
             <div class="md:w-8/12 lg:w-6/12 px-5 flex flex-col items-center md:justify-center md:items-start py-10 md:py-10">
                 <div class="flex items-center gap-2">
@@ -33,9 +35,25 @@
                     <span class="font-normal">Siguiendo</span>
                 </p>
                 <p class="text-gray-800 text-sm mb-3 font-bold">
-                    0   
+                    {{ $user->post->count() }}   
                     <span class="font-normal">Post</span>
                 </p>
+                
+                @auth
+                    <form action="" method="post">
+                        @csrf
+                        <input type="submit" value="Seguir" class="bg-blue-600 text-white uppercase rounded-lg px-3 
+                        py-1 text-xs font-bold cursor-pointer">
+                    </form>
+
+                    <form action="" method="post">
+                        @csrf
+                        <input type="submit" value="Dejar de Seguir" class="bg-red-600 text-white uppercase rounded-lg px-3 
+                        py-1 text-xs font-bold cursor-pointer">
+                    </form>
+                @endauth
+                
+
             </div>
         </div>
     </div>

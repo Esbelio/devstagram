@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ComentarioController;
+use App\Http\Controllers\FollowerController;
 use App\Http\Controllers\ImagenController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\LoginController;
@@ -53,6 +54,10 @@ Route::delete('/post/{post}/likes', [LikeController::class, 'destroy'])->name('p
 
 //Pongo al final xq tiene variable en la ruta
 Route::get('/{user:username}', [PostController::class, 'index'])->name('post.index');
+
+//Siguiendo a Usuarios
+Route::post('/{user:username}/follow', [FollowerController::class, 'store'])->name('users.follow');
+Route::delete('/{user:username}/unfollow', [FollowerController::class, 'destroy'])->name('users.unfollow');
 
 
 
