@@ -14,7 +14,7 @@ class ComentarioController extends Controller
     {
         //validar
         $this->validate($request, [
-            'comentario' => 'required|max:255'
+            'comentario' => 'required|max:255' 
         ]);
 
         //almacenar el resultado
