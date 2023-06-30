@@ -17,7 +17,7 @@ class PostController extends Controller
     public function index(User $user)
     {
         //dd($user->id);
-        $post = Post::where('user_id', $user->id)->paginate(5);
+        $post = Post::where('user_id', $user->id)->latest()->paginate(5);
         //dd($post);
         return view('dashboard', [
             'user' => $user,
